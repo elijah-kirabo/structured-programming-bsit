@@ -1,0 +1,22 @@
+# <- single line comment
+"""
+Multi line comment
+
+this is another commented line
+"""
+
+# print("this is my name") ctrl + /
+
+# Python coding Case (Snake case)
+"""
+first_name
+code_442
+"""
+'''
+
+
+'''
+# Indent 
+
+
+

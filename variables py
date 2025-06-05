@@ -1,0 +1,27 @@
+### 
+
+## value
+
+## data type 
+"""
+intergers
+floats
+strings/characters
+Boolean
+"""
+
+number_one = 30 # int
+number_two = 3.17 #float
+last_name = "elijah"
+first_name = "bukenya"
+is_attractive = False
+is_present = True
+
+## checking the datatype
+print(type(number_one))
+
+## conversinns
+new_number_two = int(number_two)
+printf(f"interger: {new_number_two} datatype: {type(number_two)}")
+
+age = "8" ## convert to an interger
