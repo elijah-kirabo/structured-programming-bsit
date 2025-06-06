@@ -22,6 +22,10 @@ print(type(number_one))
 
 ## conversinns
 new_number_two = int(number_two)
-printf(f"interger: {new_number_two} datatype: {type(number_two)}")
+print(f"interger: {new_number_two} datatype: {type(number_two)}")
 
 age = "8" ## convert to an interger
+age = "8"
+age = int(age) 
+print(age)
+print(type(age))
