@@ -29,3 +29,8 @@ age = "8"
 age = int(age) 
 print(age)
 print(type(age))
+
+string_value = (123)
+integer_value = int(123)
+print(integer_value)
+print(type(integer_value))
