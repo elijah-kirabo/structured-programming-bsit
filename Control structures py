@@ -1,0 +1,63 @@
+## if statements
+
+'''
+Synatx
+
+if condition
+    logiv
+elif conditon 
+    logic
+else
+      logic
+
+'''
+## A progran that accepts a number from the user(1-9),it tells him the number that has been entered 
+
+print("welcome to number teller!")
+number = int("input(please enter a number between 2 and 9)")
+if number == 1:
+    print("you have entered Number one")
+elif number == 2:
+     print("you have entered a number two")
+elif number == 3:
+     print("you have entered a number three")
+elif number == 4:
+     print("you have entered a number four")            
+elif number == 5:
+     print("you have entered a number five")
+elif number == 6:
+     print("you have entered a number six")
+elif number == 7:
+     print("you have entered a number seven")
+elif number == 8:
+     print("you have entered a number eight")         
+elif number == 9:
+     print("you have entered a number nine")  
+else:
+    print("Invalid, please enter a number between 1 and 9")     
+
+
+
+
+
+#
+
+print("welcome to mark allocator")
+number = int(input("please enter a number between 0 and 100:"))
+if number < 0 or number > 100:
+    print("invalid, no mark")
+elif number <= 39:
+    print("allocate F")
+elif number <= 49:
+    print("allocate E")
+elif number <= 59:
+    print("allocate D")
+elif number <= 69:
+    print("allocate C")
+elif number <= 79:
+    print("allocate B")
+elif number <= 89:
+    print("allocate A")
+elif number <= 100:
+     print("allocate A+")
+       
