@@ -1,0 +1,19 @@
+
+print("welcome to mark allocator")
+number = int(input("please enter a number between 0 and 100:"))
+if number < 0 or number > 100:
+    print("invalid, no mark")
+elif number <= 39:
+    print("allocate F")
+elif number <= 49:
+    print("allocate E")
+elif number <= 59:
+    print("allocate D")
+elif number <= 69:
+    print("allocate C")
+elif number <= 79:
+    print("allocate B")
+elif number <= 89:
+    print("allocate A")
+elif number <= 100:
+     print("allocate A+")
