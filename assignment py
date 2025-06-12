@@ -1,0 +1,38 @@
+Declaring a Variable: This involves specifying the variable's name and data type. For example, in languages like Java or C++, you declare a variable by stating its type followed by its name, e.g., int age;. In Python, you don't explicitly declare the type; instead, you directly assign a value, and Python infers the type.
+2. Assigning a Variable: This involves giving a value to a declared variable. For instance, after declaring int age; in Java or C++, you can assign it a value like age = 25;. In Python, declaration and assignment are combined into a single step: age = 25.
+
+
+
+age = "8"
+length = "56.90"
+height = "*34.09944"
+
+age = int(age)
+length = float(length)
+height = float(height.replace("*", ""))
+
+print("Age:", age, type(age))
+print("Length:", length, type(length))
+print("Height:", height, type(height))
+
+
+print("welcome to mark allocator")
+number = int(input("please enter a number between 0 and 100:"))
+if number < 0 or number > 100:
+    print("invalid, no mark")
+elif number <= 39:
+    print("allocate F")
+elif number <= 49:
+    print("allocate E")
+elif number <= 59:
+    print("allocate D")
+elif number <= 69:
+    print("allocate C")
+elif number <= 79:
+    print("allocate B")
+elif number <= 89:
+    print("allocate A")
+elif number <= 100:
+     print("allocate A+")
+
+
