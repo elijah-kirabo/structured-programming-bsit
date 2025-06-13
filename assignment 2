@@ -1,0 +1,22 @@
+print ("welcome to grade allocator")
+number = float(input("please eneter a number between o and 100"))
+if number < 0 or number > 100:
+    print ("inavlid, no mark")
+elif number >= 90:
+    print ("D1")
+elif number >= 80:
+    print ("D2")
+elif number >= 70:
+    print ("C3")
+elif number >= 60: 
+    print ("C4")
+elif number >= 55:
+    print ("C5")
+elif number >=50:
+    print ("C6")
+elif number >=40:  
+    print ("P7")
+else:
+    print ("F9")
+
+   
