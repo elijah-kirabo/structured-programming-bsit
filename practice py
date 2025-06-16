@@ -1,0 +1,15 @@
+def area(shape):
+    if shape == "rectangle":
+        l = float(input("Length: "))
+        w = float(input("Width: "))
+        return l * w
+    elif shape == "triangle":
+        b = float(input("Base: "))
+        h = float(input("Height: "))
+        return 0.5 * b * h
+    elif shape == "circle":
+        r = float(input("Radius: "))
+        return math.pi * r ** 2
+
+shape = input("Shape (rectangle, triangle, circle): ")
+print("Area:", area(shape))
