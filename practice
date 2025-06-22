@@ -3,3 +3,34 @@ def greet():
     print(f"Hello, {name}!")
 
 greet()
+
+
+# Function to calculate total marks
+def calculate_total(marks):
+    return sum(marks.values())
+
+# Function to calculate average marks
+def calculate_average(marks):
+    return sum(marks.values()) / len(marks)
+
+# Function to display student report
+def display_report(student):
+    name = student["name"]
+    marks = {k: v for k, v in student.items() if k != "name"}
+    total = calculate_total(marks)
+    average = calculate_average(marks)
+    
+    print(f"Student: {name}")
+    print(f"  Total Marks: {total}")
+    print(f"  Average Marks: {average:.2f}")
+    print("-" * 30)
+
+# Main code
+students = [
+    {"name": "Alice", "math": 85, "english": 78, "science": 92},
+    {"name": "Bob", "math": 67, "english": 74, "science": 80},
+    {"name": "Charlie", "math": 90, "english": 88, "science": 95},
+]
+
+for student in students:
+    display_report(student)
