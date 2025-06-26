@@ -14,3 +14,21 @@ while user_name != "admin" or passcode != "passcode":
     user_name = input()
     print("enter your passcode") 
     passcode = input()
+pass
+
+
+
+
+def main():
+    print("Welcome to the Indentation Race!")
+    for i in range(5):
+        print("Current number:", i)
+        if i % 2 == 0:
+            print("Even number.")
+        else:
+            print("Odd number.")
+    print("Race completed!")
+
+main()
+
+
