@@ -13,3 +13,6 @@ def area(shape):
 
 shape = input("Shape (rectangle, triangle, circle): ")
 print("Area:", area(shape))
+#pass
+
+
