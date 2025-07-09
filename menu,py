@@ -1,0 +1,149 @@
+# Ebenezer Restau
+import datetime
+
+# Define the menu for different meal times
+menu = {
+    "Breakfast": {
+        1: {"name": "Rolex", "price": 5000},
+        2: {"name": "Katogo", "price": 8000},
+        3: {"name": "Tea", "price": 2000}
+    },
+    "Lunch": {
+        1: {"name": "Posho & Beans", "price": 7000},
+        2: {"name": "Matooke & Groundnut Sauce", "price": 9000},
+        3: {"name": "Soda", "price": 3000}
+    },
+    "Supper": {
+        1: {"name": "Chips & Chicken", "price": 15000},
+        2: {"name": "Pilau", "price": 12000},
+        3: {"name": "Water", "price": 1500}
+    }
+}
+
+def display_menu(meal_time):
+    """Display the menu for the selected meal time"""
+    print(f"\n{meal_time} Menu:")
+    print("=" * 30)
+    print("No.  Item\t\tPrice")
+    print("-" * 30)
+    for item_num, item_details in menu[meal_time].items():
+        print(f"{item_num}.   {item_details['name']}\t\tUGX {item_details['price']}")
+    print("=" * 30)
+
+def take_order(meal_time):
+    """Take customer's order for the selected meal time"""
+    order = {}
+    while True:
+        display_menu(meal_time)
+        try:
+            item_num = int(input("\nEnter item number to order (0 to finish): "))
+            if item_num == 0:
+                break
+            if item_num not in menu[meal_time]:
+                print("Invalid item number. Please try again.")
+                continue
+            
+            quantity = int(input(f"Enter quantity for {menu[meal_time][item_num]['name']}: "))
+            if quantity <= 0:
+                print("Quantity must be positive. Please try again.")
+                continue
+            
+            if item_num in order:
+                order[item_num] += quantity
+            else:
+                order[item_num] = quantity
+            
+            # Calculate and display running total
+            subtotal = calculate_subtotal(meal_time, order)
+            print(f"\nCurrent subtotal: UGX {subtotal}\n")
+            
+        except ValueError:
+            print("Invalid input. Please enter numbers only.")
+    
+    return order
+
+def calculate_subtotal(meal_time, order):
+    """Calculate the subtotal for the current order"""
+    subtotal = 0
+    for item_num, quantity in order.items():
+        subtotal += menu[meal_time][item_num]["price"] * quantity
+    return subtotal
+
+def process_payment(total_bill):
+    """Process customer payment and calculate change"""
+    while True:
+        try:
+            amount_paid = float(input(f"\nTotal bill: UGX {total_bill}\nEnter amount paid: UGX "))
+            if amount_paid < total_bill:
+                print("Insufficient payment. Please provide enough funds.")
+                continue
+            change = amount_paid - total_bill
+            print(f"Change: UGX {change:.2f}")
+            return amount_paid, change
+        except ValueError:
+            print("Invalid input. Please enter a valid amount.")
+
+def generate_receipt(meal_time, order, total_bill, amount_paid, change):
+    """Generate and display a receipt for the order"""
+    current_time = datetime.datetime.now()
+    
+    print("\n\n" + "=" * 40)
+    print(" " * 10 + "EBENEZER RESTAURANT")
+    print("=" * 40)
+    print(f"Date: {current_time.strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"Meal Time: {meal_time}")
+    print("-" * 40)
+    print("Item\t\tQty\tPrice\tSubtotal")
+    print("-" * 40)
+    
+    for item_num, quantity in order.items():
+        item = menu[meal_time][item_num]
+        subtotal = item["price"] * quantity
+        print(f"{item['name']}\t{quantity}\tUGX {item['price']}\tUGX {subtotal}")
+    
+    print("-" * 40)
+    print(f"TOTAL BILL:\t\t\tUGX {total_bill}")
+    print(f"AMOUNT PAID:\t\t\tUGX {amount_paid}")
+    print(f"CHANGE:\t\t\t\tUGX {change:.2f}")
+    print("=" * 40)
+    print(" " * 10 + "THANK YOU FOR DINING WITH US!")
+    print("=" * 40 + "\n")
+
+def main():
+    print("Welcome to Ebenezer Restaurant Order System")
+    print("=" * 50)
+    
+    while True:
+        # Select meal time
+        print("\nSelect meal time:")
+        print("1. Breakfast")
+        print("2. Lunch")
+        print("3. Supper")
+        print("4. Exit")
+        
+        try:
+            choice = int(input("Enter your choice (1-4): "))
+            if choice == 4:
+                print("Thank you for using Ebenezer Restaurant Order System. Goodbye!")
+                break
+            elif choice not in [1, 2, 3]:
+                print("Invalid choice. Please select 1-4.")
+                continue
+            
+            meal_time = ["Breakfast", "Lunch", "Supper"][choice - 1]
+            order = take_order(meal_time)
+            
+            if not order:
+                print("No items were ordered.")
+                continue
+            
+            total_bill = calculate_subtotal(meal_time, order)
+            amount_paid, change = process_payment(total_bill)
+            generate_receipt(meal_time, order, total_bill, amount_paid, change)
+            
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+if __name__ == "__main__":
+    main()
+
