@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diversity & Inclusion in Web Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        @media (min-width: 900px) {
+            .content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .icon {
+            width: 60px;
+            height: 60px;
+            background: #1a2a6c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        
+        h2 {
+            color: #1a2a6c;
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        li:before {
+            content: "•";
+            color: #fdbb2d;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            font-size: 1.2rem;
+        }
+        
+        .emphasis {
+            background: #f5f5f5;
+            border-left: 5px solid #fdbb2d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+            padding: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            color: #fdbb2d;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Diversity & Inclusion in Web Design</h1>
+            <p class="subtitle">Creating accessible and inclusive web experiences for everyone</p>
+        </header>
+        
+        <div class="content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h2>Why Diversity & Inclusion Matter</h2>
+                </div>
+                <p>Diversity and inclusion are critical aspects of web design because:</p>
+                <ul>
+                    <li>Websites should be accessible to <span class="highlight">all users</span>, regardless of abilities, background, or technology</li>
+                    <li>Inclusive design expands your <span class="highlight">potential audience</span> and market reach</li>
+                    <li>Diverse perspectives in design teams lead to more <span class="highlight">innovative solutions</span></li>
+                    <li>It's not just ethical—in many regions, it's a <span class="highlight">legal requirement</span></li>
+                    <li>Inclusive design often results in <span class="highlight">better user experiences</span> for everyone</li>
+                </ul>
+                <div class="emphasis">
+                    <p>"When we design for disabilities, we make things better for everyone."</p>
+                    <p>- Microsoft Design Principles</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h2>Ensuring Accessibility</h2>
+                </div>
+                <p>As web engineers and architects, we can ensure accessibility by:</p>
+                <ul>
+                    <li>Following <span class="highlight">WCAG guidelines</span> (Web Content Accessibility Guidelines)</li>
+                    <li>Implementing <span class="highlight">semantic HTML</span> for proper document structure</li>
+                    <li>Ensuring <span class="highlight">keyboard navigation</span> and screen reader compatibility</li>
+                    <li>Providing <span class="highlight">alternative text</span> for images and media content</li>
+                    <li>Maintaining sufficient <span class="highlight">color contrast</span> for readability</li>
+                    <li>Designing with <span class="highlight">responsive layouts</span> that work on various devices</li>
+                    <li>Conducting <span class="highlight">user testing</span> with people of diverse abilities</li>
+                    <li>Using <span class="highlight">ARIA landmarks</span> when necessary for complex components</li>
+                </ul>
+                <div class="emphasis">
+                    <p>Accessibility is not a feature—it's a fundamental aspect of good web development.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Web Development Group Activity | Created with ♥ for inclusive design</p>
+            <p>Remember: The web is for everyone, and it's our responsibility to keep it that way.</p>
+        </footer>
+    </div>
+</body>
+</html>
