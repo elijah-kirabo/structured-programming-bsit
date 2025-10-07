@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mr A Firefighting Co. - Frontend Database</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Mr A Firefighting Co.</h1>
+      <p class="subtitle">Frontend Database — Equipment, Incidents, and Team Gallery</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title">Add / Edit Record</h2>
+
+      <form id="record-form" novalidate>
+        <input type="hidden" id="record-id">
+
+        <div class="grid">
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category" required aria-required="true">
+              <option value="">Select…</option>
+              <option value="equipment">Equipment</option>
+              <option value="incident">Incident</option>
+              <option value="team">Team</option>
+              <option value="training">Training</option>
+            </select>
+            <span class="error" id="category-error" role="alert"></span>
+          </div>
+
+          <div class="field">
+            <label for="title">Title</label>
+            <input id="title" type="text" placeholder="e.g., Ladder Truck 12" required aria-required="true">
+            <span class="error" id="title-error" role="alert"></span>
+          </div>
+
+          <div class="field">
+            <label for="date">Date</label>
+            <input id="date" type="date">
+          </div>
+
+          <div class="field">
+            <label for="location">Location</label>
+            <input id="location" type="text" placeholder="e.g., Station 4 or Elm St.">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea id="description" rows="3" placeholder="Details about the equipment, incident, or person"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="image">Image</label>
+          <input id="image" type="file" accept="image/*">
+          <div class="image-preview" id="image-preview" aria-live="polite"></div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary" id="save-btn">Save Record</button>
+          <button type="button" class="btn" id="reset-btn">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="filters-title">
+      <h2 id="filters-title">Search & Filters</h2>
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search title, description, location…" aria-label="Search records">
+        <select id="filter-category" aria-label="Filter by category">
+          <option value="">All Categories</option>
+          <option value="equipment">Equipment</option>
+          <option value="incident">Incident</option>
+          <option value="team">Team</option>
+          <option value="training">Training</option>
+        </select>
+        <select id="sort" aria-label="Sort">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="title-asc">Title A→Z</option>
+          <option value="title-desc">Title Z→A</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="gallery-title">
+      <div class="gallery-header">
+        <h2 id="gallery-title">Records Gallery</h2>
+        <button class="btn" id="export-btn" title="Export database to JSON">Export</button>
+        <label class="btn file-label" for="import-input" title="Import database from JSON">Import</label>
+        <input type="file" id="import-input" accept="application/json" hidden>
+      </div>
+      <div id="gallery" class="gallery" role="list" aria-live="polite"></div>
+      <p id="empty-state" class="muted">No records yet. Add your first record above.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Mr A Firefighting Co.</small>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
